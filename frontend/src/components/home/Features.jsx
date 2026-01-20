@@ -6,7 +6,7 @@ const Features = () => {
     const [isHover, setIsHover] = React.useState(false);
 
     return (
-        <div id="features" className="flex flex-col items-center my-10 scroll-mt-12">
+        <div id="features" className="flex flex-col items-center my-10 scroll-mt-2">
             <div className="flex items-center gap-2 text-sm text-green-800 bg-green-400/10 rounded-full px-6 py-1.5">
                 <Zap width={14} />
                 <span>Simple Process</span>
