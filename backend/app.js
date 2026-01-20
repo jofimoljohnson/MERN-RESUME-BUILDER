@@ -2,7 +2,7 @@ import express from "express";
 import connectDB from "./db/connectDB.js";
 import userRouter from "./routes/userRoutes.js";
 import resumeRouter from "./routes/resumeRoutes.js";
-import aiRouter from './routes/aiRoutes.js'
+import aiRouter from "./routes/aiRoutes.js";
 import cors from "cors";
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -10,24 +10,20 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 // app.use(cors());
 
-app.use(cors({
-  origin:[
-        "http://localhost:5173",
-        "https://mern-resume-builder-4suh.vercel.app"
-
-  ],
-  credentials: true
-}));
-
-
+app.use(
+    cors({
+        origin: ["http://localhost:5173", 
+            "https://mern-resume-builder-4suh.vercel.app"],
+        credentials: true,
+    }),
+);
 
 app.use("/api/users", userRouter);
 app.use("/api/resumes", resumeRouter);
-app.use("/api/ai",aiRouter)
+app.use("/api/ai", aiRouter);
 
 connectDB().then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
 });
-
