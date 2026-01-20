@@ -11,7 +11,11 @@ app.use(express.json());
 // app.use(cors());
 
 app.use(cors({
-  origin: true,
+  origin:[
+        "http://localhost:5173",
+        "https://mern-resume-builder-4suh.vercel.app"
+
+  ],
   credentials: true
 }));
 
